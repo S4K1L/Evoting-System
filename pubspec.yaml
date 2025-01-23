@@ -1,0 +1,46 @@
+name: evote
+description: "Electronic Voting system"
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+#<-----Dart Version-------->
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+
+#<-----Dependencies-------->
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  get:
+  flutter_screenutil:
+  google_fonts: ^6.2.1
+  local_auth: ^2.3.0
+  firebase_core: ^3.5.0
+  firebase_auth: ^5.3.0
+  cloud_firestore: ^5.4.2
+  firebase_storage: ^12.3.1
+  image_picker: ^1.1.2
+  cached_network_image: ^3.2.3
+  intl:
+  animated_splash_screen:
+  skeletonizer: ^1.4.2
+  web3dart: ^2.7.3
+
+
+#<-----Dev Dependencies-------->
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+
+#<-----Assets-------->
+flutter:
+  uses-material-design: true
+  assets:
+     - assets/images/
+     - assets/icons/
