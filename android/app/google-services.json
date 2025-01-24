@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632694209747",
+    "project_id": "evoting-system-34d6d",
+    "storage_bucket": "evoting-system-34d6d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632694209747:android:81b27ec736fb4372432826",
+        "android_client_info": {
+          "package_name": "com.s4k1l.evotingsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaIgWXDEKzDJR16UnYyF-AjoInDmuYFtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
