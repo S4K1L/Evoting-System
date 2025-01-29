@@ -29,7 +29,7 @@ class _BottomBarState extends State<UserBottomBar> {
       body: screens[indexColor],
       bottomNavigationBar: BottomAppBar(
         elevation: 10,
-        color: Colors.white,
+        color: kPrimaryColor,
         shape: const CircularNotchedRectangle(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 60),

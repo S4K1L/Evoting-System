@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: kPrimaryColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.blue[700],
@@ -136,7 +136,7 @@ class ProfilePage extends StatelessWidget {
                         userController.user.value.phone ?? 'Not available'),
                     const SizedBox(height: 20),
                     _buildInfoRow(Icons.email, 'Email',
-                        userController.user.value.email ?? 'Not available'),
+                        userController.user.value.nid ?? 'Not available'),
                     const SizedBox(height: 20),
                     _buildInfoRow(Icons.password, 'Password',
                         userController.user.value.password ?? 'Not available'),

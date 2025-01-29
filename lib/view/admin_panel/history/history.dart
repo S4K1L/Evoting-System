@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../controller/history_controller.dart';
 import '../../../utils/constant/colors.dart';
 import '../../../utils/constant/constant.dart';
@@ -27,7 +26,7 @@ class History extends StatelessWidget {
         title: const Row(
           children: [
             Spacer(),
-            Text('eVote', style: TextStyle(color: kRedColor)),
+            Text('E-Voting', style: TextStyle(color: kBlueColor)),
             Text(' - HISTORY'),
             Spacer(),
             Icon(Icons.report, color: kWhiteColor, size: 26),

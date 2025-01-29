@@ -76,7 +76,7 @@ class OngoingElectionDetails extends StatelessWidget {
                               children: [
                                 Text(
                                   nominee['name'] ?? 'Nominee name',
-                                  style: TextStyle(fontSize: 20.sp),
+                                  style: TextStyle(fontSize: 14.sp),
                                   overflow: TextOverflow.ellipsis, // Avoid overflow
                                 ),
                                 Text(

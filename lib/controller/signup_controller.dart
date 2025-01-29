@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 class SignupController extends GetxController {
   final nameController = TextEditingController().obs;
   final phoneController = TextEditingController().obs;
-  final emailController = TextEditingController().obs;
+  final nidController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
   final formKey = GlobalKey<FormState>();
 
@@ -23,8 +23,9 @@ class SignupController extends GetxController {
   var userModel = UserModel().obs;
   RxBool isLoading = false.obs;
 
-  Future<UserModel?> signUp(String email, String password) async {
+  Future<UserModel?> signUp(String nid, String password) async {
     isLoading.value = true;
+    String email = "$nid@gmail.com";
     try {
       // Validate the form
       if (!formKey.currentState!.validate()) {
@@ -52,14 +53,14 @@ class SignupController extends GetxController {
           userModel.value = UserModel(
             name: nameController.value.text,
             phone: phoneController.value.text,
-            email: emailController.value.text,
+            nid: nidController.value.text,
             password: passwordController.value.text,
           );
 
           // Store user information in Firestore
           await _firestore.collection('users').doc(user.uid).set({
             'name': userModel.value.name,
-            'email': userModel.value.email,
+            'nid': userModel.value.nid,
             'password': userModel.value.password,
             'phone': userModel.value.phone,
             'role': 'user',

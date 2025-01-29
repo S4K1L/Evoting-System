@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 
 class InputForm extends StatelessWidget {
   const InputForm({
-    super.key, required this.title, required this.icon, required this.controller,
+    super.key, required this.title, required this.icon, required this.controller, required this.obscureText,
   });
   final String title;
+  final bool obscureText;
   final IconData icon;
   final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
       controller: controller,
       decoration: InputDecoration(
         prefixIcon: Icon(icon),

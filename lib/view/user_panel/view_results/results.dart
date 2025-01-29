@@ -76,7 +76,7 @@ class ViewResults extends StatelessWidget {
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16),
                     ),
-                    color: kWhiteColor
+                    color: kPrimaryColor
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,7 +96,7 @@ class ViewResults extends StatelessWidget {
                               height: 80,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
-                                color: Colors.blue.withOpacity(0.3),
+                                color: Colors.white,
                               ),
                               child: Row(
                                 children: [

@@ -3,7 +3,6 @@ import 'package:evotingsystem/utils/constant/constant.dart';
 import 'package:evotingsystem/view/user_panel/ongoing_election/ongoing_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../utils/constant/colors.dart';
 
 class OngoingElection extends StatelessWidget {
@@ -13,7 +12,7 @@ class OngoingElection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.withOpacity(0.6),
+      backgroundColor: Colors.blue.withOpacity(0.7),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +98,7 @@ class OngoingElection extends StatelessWidget {
                   topLeft: Radius.circular(16),
                   topRight: Radius.circular(16),
                 ),
-                color: kWhiteColor
+                color: kPrimaryColor
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,7 +117,7 @@ class OngoingElection extends StatelessWidget {
                           height: 80,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
-                            color: Colors.blue.withOpacity(0.3),
+                            color: kWhiteColor,
                           ),
                           child: Row(
                             children: [

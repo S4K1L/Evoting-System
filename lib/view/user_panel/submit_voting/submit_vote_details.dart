@@ -109,7 +109,7 @@ class SubmitVotingDetails extends StatelessWidget {
                             ),
                             Text(
                               'Now',
-                              style: TextStyle(fontSize: 20.r, color: kRedColor, fontWeight: FontWeight.w900),
+                              style: TextStyle(fontSize: 20.r, color: kBlueColor, fontWeight: FontWeight.w900),
                             ),
                             Text('Tap here', style: TextStyle(fontSize: 14.r, color: kWhiteColor)),
                           ],

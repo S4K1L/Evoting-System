@@ -40,7 +40,7 @@ class ElectionDetails extends StatelessWidget {
               onPressed: () {
                 _showAddNomineeDialog(context, controller);
               },
-              icon: const Icon(Icons.add_task, color: kRedColor, size: 26),
+              icon: const Icon(Icons.add_task, color: kBlueColor, size: 26),
             ),
           ],
         ),

@@ -11,8 +11,9 @@ class LoginController extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // Login function
-  Future<void> login(String email, String password) async {
+  Future<void> login(String nid, String password) async {
     isLoading.value = true;
+    String email = "$nid@gmail.com";
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
       isLoading.value = false;
@@ -73,7 +74,8 @@ class LoginController extends GetxController {
     }
   }
 
-  Future<void> resetPassword(String email) async {
+  Future<void> resetPassword(String nid) async {
+    String email = "$nid@gmail.com";
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
     } catch (error) {

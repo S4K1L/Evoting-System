@@ -1,3 +1,4 @@
+import 'package:evotingsystem/utils/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
@@ -15,13 +16,13 @@ class CustomTextButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(firstText,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
+          Text(firstText,style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
           Text(
             secondText,
             style: const TextStyle(
-              color: Colors.purple,
+              color: kPrimaryColor,
               fontWeight: FontWeight.bold,
-              fontSize: 16
+              fontSize: 18
             ),
           ),
         ],

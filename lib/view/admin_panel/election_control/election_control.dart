@@ -25,7 +25,7 @@ class ElectionControl extends StatelessWidget {
         title: const Row(
           children: [
             Spacer(),
-            Text('ELECTION', style: TextStyle(color: kRedColor)),
+            Text('ELECTION', style: TextStyle(color: kBlueColor)),
             Text(' CONTROL'),
             Spacer(),
             Icon(Icons.report, color: kWhiteColor, size: 26),
