@@ -1,4 +1,3 @@
-import 'package:evotingsystem/main.dart';
 import 'package:evotingsystem/utils/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

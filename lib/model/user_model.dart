@@ -7,6 +7,7 @@ class UserModel {
   final String? password;
   final String? uid;
   late final String? profileImage;
+  final bool? fingerPrint;
 
   UserModel({
     this.name,
@@ -15,6 +16,7 @@ class UserModel {
     this.password,
     this.uid,
     this.profileImage,
+    this.fingerPrint,
   });
 
   factory UserModel.fromSnapshot(DocumentSnapshot doc) {
@@ -25,6 +27,7 @@ class UserModel {
       phone: data['phone'] ?? '',
       password: data['password'] ?? '',
       profileImage: data['profileImage'] ?? '',
+      fingerPrint: data['fingerPrint'] ?? '',
     );
   }
 
@@ -36,7 +39,8 @@ class UserModel {
       'nid': nid,
       'password': password,
       'profileImage': profileImage,
-      'uid': uid
+      'uid': uid,
+      'fingerPrint': fingerPrint,
     };
   }
 }

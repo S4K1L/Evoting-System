@@ -135,7 +135,7 @@ class ProfilePage extends StatelessWidget {
                     _buildInfoRow(Icons.phone, 'Phone',
                         userController.user.value.phone ?? 'Not available'),
                     const SizedBox(height: 20),
-                    _buildInfoRow(Icons.email, 'Email',
+                    _buildInfoRow(Icons.perm_identity, 'NID',
                         userController.user.value.nid ?? 'Not available'),
                     const SizedBox(height: 20),
                     _buildInfoRow(Icons.password, 'Password',

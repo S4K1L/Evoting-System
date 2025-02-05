@@ -55,6 +55,7 @@ class SignupController extends GetxController {
             phone: phoneController.value.text,
             nid: nidController.value.text,
             password: passwordController.value.text,
+            fingerPrint: true,
           );
 
           // Store user information in Firestore
@@ -65,6 +66,7 @@ class SignupController extends GetxController {
             'phone': userModel.value.phone,
             'role': 'user',
             'uid': user.uid,
+            'fingerPrint': userModel.value.fingerPrint,
           });
 
           isLoading.value = false;

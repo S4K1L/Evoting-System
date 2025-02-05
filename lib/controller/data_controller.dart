@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:evotingsystem/controller/login_controller.dart';
 import 'package:evotingsystem/controller/signup_controller.dart';
@@ -16,6 +15,7 @@ class UserController extends GetxController {
   // Observables
   var user = UserModel().obs;
   var isLoading = false.obs;
+  var fingerStatus = false.obs;
 
   // Firebase instances
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -28,7 +28,56 @@ class UserController extends GetxController {
   void onInit() {
     super.onInit();
     fetchLoggedInUser();
+    loadFingerStatus();
   }
+
+  // Function to toggle and update the fingerprint status
+  void fingerPrintStatus(bool newValue) async {
+    try {
+      User? user = _auth.currentUser;
+
+      if (user != null) {
+        // Update the local observable state
+        fingerStatus.value = newValue;
+
+        // Update the Firestore 'fingerPrint' status for the logged-in user
+        await _firestore.collection('users').doc(user.uid).update({
+          'fingerPrint': newValue,
+        });
+
+        Get.snackbar(
+          'Success',
+          newValue ? 'Fingerprint enabled successfully' : 'Fingerprint disabled',
+        );
+      } else {
+        Get.snackbar('Error', 'No user is logged in');
+      }
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to update fingerprint status: $e');
+    }
+  }
+
+  // Function to load initial status from Firestore (when the user logs in)
+  Future<void> loadFingerStatus() async {
+    try {
+      User? user = _auth.currentUser;
+
+      if (user != null) {
+        // Fetch the user's document from Firestore
+        DocumentSnapshot userDoc = await _firestore.collection('users').doc(user.uid).get();
+
+        if (userDoc.exists) {
+          Map<String, dynamic>? userData = userDoc.data() as Map<String, dynamic>?;
+          if (userData != null && userData.containsKey('fingerPrint')) {
+            fingerStatus.value = userData['fingerPrint'];
+          }
+        }
+      }
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to load fingerprint status: $e');
+    }
+  }
+
 
   // Fetch the logged-in user's data
   Future<void> fetchLoggedInUser() async {

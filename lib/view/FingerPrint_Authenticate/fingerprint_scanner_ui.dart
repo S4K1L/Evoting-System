@@ -1,10 +1,10 @@
-import 'package:evotingsystem/controller/local_auth_api.dart';
 import 'package:evotingsystem/utils/component/auth_button.dart';
 import 'package:evotingsystem/utils/constant/colors.dart';
-import 'package:evotingsystem/utils/widgets/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:lottie/lottie.dart';
+import '../../Controller/local_auth_api.dart';
+import '../../Utils/Widgets/custom_widgets.dart';
 import '../../utils/constant/constant.dart';
 
 class FingerprintPage extends StatefulWidget {
@@ -39,7 +39,7 @@ class _FingerprintPageState extends State<FingerprintPage> {
     body: SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(
+          Container(
             height: MediaQuery.of(context).size.height/2.7,
             child: Column(
               children: [
@@ -117,7 +117,8 @@ class _FingerprintPageState extends State<FingerprintPage> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               // buildText('Biometrics Hardware  ', isAvailable),
-                              buildText('Fingerprint Availability ', hasFingerprint),
+                              buildText(
+                                  'Fingerprint Availability ', hasFingerprint),
                               authenticateButton(context)
                             ],
                           );
