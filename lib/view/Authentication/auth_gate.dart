@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:evotingsystem/utils/constant/colors.dart';
+import 'package:evotingsystem/utils/routes/routes.dart';
 import 'package:evotingsystem/view/FingerPrint_Authenticate/fingerprint_scanner_ui.dart';
 import 'package:evotingsystem/view/user_panel/login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:liquid_progress_indicator_v2/liquid_progress_indicator.dart';
 
 class AuthGate extends StatelessWidget {
@@ -40,4 +44,6 @@ class AuthGate extends StatelessWidget {
       ),
     );
   }
+
+
 }

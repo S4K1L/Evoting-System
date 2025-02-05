@@ -1,4 +1,3 @@
-import 'package:evotingsystem/utils/component/auth_button.dart';
 import 'package:evotingsystem/utils/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
@@ -116,7 +115,7 @@ class _FingerprintPageState extends State<FingerprintPage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              // buildText('Biometrics Hardware  ', isAvailable),
+                              buildText('Biometrics Hardware  ', isAvailable),
                               buildText(
                                   'Fingerprint Availability ', hasFingerprint),
                               authenticateButton(context)

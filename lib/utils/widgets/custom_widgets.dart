@@ -44,6 +44,8 @@ Widget authenticateButton(context) {
 
           if (isAuthenticated) {
             Get.offAll(() => const FingerPrintVerify());
+          }else{
+            Get.snackbar("Error", "Fingerprint not found");
           }
         }),
   );

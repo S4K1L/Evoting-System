@@ -25,7 +25,6 @@ final pages = [
   GetPage(
     name: RoutesPath.initialization,
     page: ()=> const AuthGate(),
-    transition: Transition.rightToLeft
   ),
   GetPage(
     name: RoutesPath.login,
