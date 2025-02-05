@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         title: 'E-voting System',
         debugShowCheckedModeBanner: false,
-        initialRoute: RoutesPath.login,
+        initialRoute: RoutesPath.initialization,
         getPages: pages,
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:evotingsystem/controller/submit_voting_controller.dart';
 import 'package:evotingsystem/utils/constant/colors.dart';
+import 'package:evotingsystem/view/FingerPrint_Authenticate/Voting_Authenticate/voting_fingerprint_scanner.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,7 +31,8 @@ class SubmitVotingDetails extends StatelessWidget {
         ),
         title: Text(
           electionName,
-          style: TextStyle(fontSize: 16.r, color: kWhiteColor, letterSpacing: 1.5),
+          style:
+              TextStyle(fontSize: 16.r, color: kWhiteColor, letterSpacing: 1.5),
         ),
       ),
       body: Obx(() {
@@ -43,7 +45,9 @@ class SubmitVotingDetails extends StatelessWidget {
           itemBuilder: (context, index) {
             final nominee = controller.nominees[index];
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 1.5, vertical: kDefaultPadding / 2),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: kDefaultPadding / 1.5,
+                  vertical: kDefaultPadding / 2),
               child: Container(
                 height: 80.r,
                 decoration: BoxDecoration(
@@ -62,12 +66,13 @@ class SubmitVotingDetails extends StatelessWidget {
                             backgroundImage: nominee['profileImageUrl'] != null
                                 ? NetworkImage(nominee['profileImageUrl'])
                                 : const NetworkImage(
-                                'https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp'),
+                                    'https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp'),
                           ),
                         ),
                       ],
                     ),
-                    Expanded( // Ensure the Column fits within available space
+                    Expanded(
+                      // Ensure the Column fits within available space
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -85,14 +90,18 @@ class SubmitVotingDetails extends StatelessWidget {
                               color: kBlackColor,
                             ),
                             maxLines: 2,
-                            overflow: TextOverflow.ellipsis, // Ensure text doesn't overflow
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
                     ),
                     GestureDetector(
                       onTap: () async {
-                        await controller.submitVote(nominee['id']);
+                        Get.to(() => VotingFingerprintPage(
+                              onPress: () async {
+                                await controller.submitVote(nominee['id']);
+                              },
+                            ));
                       },
                       child: Container(
                         width: 80.r,
@@ -105,18 +114,25 @@ class SubmitVotingDetails extends StatelessWidget {
                           children: [
                             Text(
                               'VOTE',
-                              style: TextStyle(fontSize: 16.r, fontWeight: FontWeight.w900, color: kWhiteColor),
+                              style: TextStyle(
+                                  fontSize: 16.r,
+                                  fontWeight: FontWeight.w900,
+                                  color: kWhiteColor),
                             ),
                             Text(
                               'Now',
-                              style: TextStyle(fontSize: 20.r, color: kBlueColor, fontWeight: FontWeight.w900),
+                              style: TextStyle(
+                                  fontSize: 20.r,
+                                  color: kBlueColor,
+                                  fontWeight: FontWeight.w900),
                             ),
-                            Text('Tap here', style: TextStyle(fontSize: 14.r, color: kWhiteColor)),
+                            Text('Tap here',
+                                style: TextStyle(
+                                    fontSize: 14.r, color: kWhiteColor)),
                           ],
                         ),
                       ),
                     )
-
                   ],
                 ),
               ),

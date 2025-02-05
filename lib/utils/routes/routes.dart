@@ -1,4 +1,5 @@
 import 'package:evotingsystem/utils/widgets/user_bottom_bar.dart';
+import 'package:evotingsystem/view/Authentication/auth_gate.dart';
 import 'package:evotingsystem/view/admin_panel/admin_home/admin_home.dart';
 import 'package:evotingsystem/view/admin_panel/create_election.dart';
 import 'package:evotingsystem/view/admin_panel/election_control/election_control.dart';
@@ -8,6 +9,7 @@ import 'package:get/get.dart';
 
 class RoutesPath {
   static String login = '/login';
+  static String initialization = '/initialization';
   static String signUp = '/signUp';
   static String userBottomBar = '/userBottomBar';
   static String adminHome = '/adminHome';
@@ -20,6 +22,11 @@ class RoutesPath {
 }
 
 final pages = [
+  GetPage(
+    name: RoutesPath.initialization,
+    page: ()=> const AuthGate(),
+    transition: Transition.rightToLeft
+  ),
   GetPage(
     name: RoutesPath.login,
     page: ()=> Login(),
